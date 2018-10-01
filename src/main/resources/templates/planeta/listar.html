@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link type="text/css" rel="stylesheet"
+  href="../materialize/css/materialize.min.css" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet" />
+<meta charset="UTF-8" />
+<title>StarWar</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body class="grey lighten-3">
+  <div id="listaDePlanetas">
+    <h3 class="main-title center">Lista de Planetas</h3>
+    <div class="container">
+      <table class="striped responsive-table">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Nome</th>
+            <th style="text-align: center;">Clima</th>
+            <th style="text-align: center;">Terreno</th>
+               <th style="text-align: center;">Numero de Aparições</th>
+          </tr>
+        </thead>
+        <tr th:each="planeta : ${planetas}">
+          <td style="text-align: center;"><span th:text="${planeta.nome}"></span></td>
+          <td style="text-align: center;"><span th:text="${planeta.clima}"></span></td>
+          <td style="text-align: center;"><span th:text="${planeta.terreno}"></span></td>
+          <td style="text-align: center;"><span th:text="${planeta.numeroDeAparicoes}"></span></td>
+          
+          <td style="text-align: center;">
+            <a th:href="@{'/planeta/visualizar/' + ${planeta.id}}" title="Visualizar"> 
+              <i class="tiny material-icons ">perm_contact_calendar</i>
+            </a>
+             <a th:href="@{'/planeta/excluir/' + ${planeta.id}}" title="Deletar">
+	          	<i class="tiny material-icons icon-blue">note_add</i>
+	         </a>
+          </td>
+          
+         
+        </tr>
+      </table>
+    </div>
+  </div><!-- Fim DIV listar alunos -->
+  <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+
+</body>
+</html>

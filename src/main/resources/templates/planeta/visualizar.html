@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8" />
+<link type="text/css" rel="stylesheet"
+  href="../../materialize/css/materialize.min.css" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet" />
+<title>EscolAlura</title>
+<script type="text/javascript"
+    src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body class="grey lighten-3">
+<div id="formularioEdicao" class="container">
+  <h3 class="main-title center">Visualizar </h3>
+    <div class="row">
+        <div class="section">
+          <h5>Dados Básicos</h5>
+          <div class="row">
+            <div class="input-field col s12">
+                  <input id="first_name" type="text" th:field="${planeta.nome}" disabled="disabled"  />
+              <label for="first_name">Nome</label>
+                </div>
+          </div>
+           <div class="row">
+                <div class="input-field col s12">
+              <input id="last_name" type="text" class="datepicker" th:field="${planeta.clima}" disabled="disabled"  />
+                    <label for="last_name">Clima</label>
+                </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="first_name" type="text" class="validate" th:field="${planeta.terreno}" disabled="disabled"   />
+              <label for="first_name">Terreno</label>
+            </div>
+          </div>
+        </div> 
+        
+       
+
+        <div class="row">
+          <div class="input-field col s12 center">
+            <button onclick="history.back();" class="btn waves-effect waves-light" type="submit" name="action">Voltar</button>
+          </div>
+        </div>
+    </div>
+
+  </div> <!-- Fim do formulario de edicao -->
+
+  <script type="text/javascript" src="../../materialize/js/materialize.min.js"></script>
+
+</body>
+</html>
